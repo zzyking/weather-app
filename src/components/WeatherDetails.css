@@ -1,3 +1,10 @@
 .WeatherDetails {
-  /* Your styles */
+  background: #f7f7f7;
+  border-top: 1px solid #eee;
+  padding: 10px;
+}
+
+.WeatherDetails p {
+  margin: 5px 0;
+  color: #333;
 }

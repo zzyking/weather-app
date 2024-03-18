@@ -1,3 +1,26 @@
 .WeatherCard {
-  /* Your styles */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.WeatherCard h2 {
+  color: #333;
+  font-size: 1.5em;
+}
+
+.WeatherCard h3 {
+  color: #007bff;
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+.WeatherCard p {
+  color: #666;
+  font-size: 1em;
 }

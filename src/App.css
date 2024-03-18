@@ -1,15 +1,26 @@
-/* Add your styles here */
 .App {
-  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background: #e9ecef;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 10vh;
+  background-color: #007bff;
+  padding: 20px;
+  color: white;
+}
+
+.App-header h1 {
+  margin: 0;
+}
+
+.main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
