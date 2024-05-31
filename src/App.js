@@ -9,9 +9,9 @@ function App() {
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        const response = await axios.get('https://devapi.qweather.com/v7/weather/3d?location=101010100&key=66d466bc11dc49c795c313f90b3b1feb'); // Replace with your weather API endpoint
-        console.log(response.data); // Add this line
-        setWeatherData(response.data);
+        const response = await axios.get('xxxxxx'); // Replace with your weather API endpoint
+        console.log(response.data);
+        setWeatherData(response.data.daily[0]);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       }

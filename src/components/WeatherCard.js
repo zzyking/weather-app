@@ -1,28 +1,34 @@
 import React from 'react';
 import WeatherDetails from './WeatherDetails';
-import moment from 'moment';
 import './WeatherCard.css';
+import moment from 'moment';
 
 function WeatherCard({ data }) {
   let date, temp, description;
+  var curr = moment().format('HH:mm');
 
-  if (data && data.weather && data.weather.length > 0) {
-    date = moment(data.date).format('dddd, MMMM Do');
-    temp = data.temperature;
-    description = data.weather[0].description;
+  if (data) {
+    date = moment(data.fxDate).format('dddd, MMMM Do');
+    temp = {tempMin: data.tempMin, tempMax: data.tempMax};
+    if(curr > data.sunrise && curr < data.sunset){
+      description = data.textDay;
+    }
+    else{
+      description = data.textNight;
+    }
   } else {
     // Handle the case where the data is not available
     date = 'No date available';
-    temp = 'No temperature available';
+    temp = {tempMin: 'N/A', tempMax: 'N/A'};
     description = 'No description available';
   }
 
   return (
     <div className="WeatherCard">
       <h2>{date}</h2>
-      <h3>{temp}°C</h3>
+      <h3>{temp.tempMin}°C-{temp.tempMax}°C</h3>
       <p>{description}</p>
-      {data && data.details && <WeatherDetails details={data.details} />}
+      {data && <WeatherDetails details={data} />}
     </div>
   );
 }
